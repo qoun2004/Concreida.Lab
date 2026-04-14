@@ -774,13 +774,6 @@ function switchTab(tab){
   }
 }
 </script>
-<script>
-function switchTab(tab,btn){
-  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById('tab-standard').style.display=tab==='standard'?'grid':'none';
-  document.getElementById('tab-custom').style.display=tab==='custom'?'grid':'none';
-}
-</script>
+
 </body>
 </html>
