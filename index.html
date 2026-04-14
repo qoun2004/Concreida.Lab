@@ -639,17 +639,17 @@ footer{background:var(--charcoal);padding:4rem 4rem 0;}
 
 /* ===== MUSIC PLAYER ===== */
 .music-player{
-  position:fixed;bottom:2rem;right:2rem;z-index:200;
-  display:flex;align-items:center;gap:0.75rem;
-  padding:0.75rem 1.1rem;
-  background:rgba(42,39,36,0.92);
-  border:1px solid rgba(212,207,200,0.2);
-  backdrop-filter:blur(12px);
+  position:fixed;bottom:2rem;right:2rem;z-index:900;
+  display:flex;align-items:center;gap:0.85rem;
+  padding:0.9rem 1.25rem 0.9rem 1rem;
+  background:rgba(30,26,22,0.96);
+  border:1px solid rgba(155,91,58,0.45);
+  backdrop-filter:blur(16px);
   border-radius:50px;
   transition:all 0.3s;
-  box-shadow:0 4px 24px rgba(0,0,0,0.4);
+  box-shadow:0 8px 32px rgba(0,0,0,0.55),0 0 0 1px rgba(155,91,58,0.15);
 }
-.music-player:hover{border-color:rgba(155,91,58,0.5);}
+.music-player:hover{border-color:rgba(196,122,84,0.7);box-shadow:0 8px 32px rgba(0,0,0,0.6),0 0 20px rgba(155,91,58,0.15);}
 .music-btn{
   width:32px;height:32px;border-radius:50%;
   background:var(--rust);border:none;cursor:pointer;
@@ -1306,89 +1306,117 @@ footer{background:var(--charcoal);padding:4rem 4rem 0;}
   </div>
 </section>
 
-<!-- MATERIAL PHILOSOPHY（緊湊版） -->
-<section id="material" style="padding:4rem 4rem;background:var(--concrete-dark);position:relative;overflow:hidden;">
-  <!-- 底圖裝飾 -->
+<!-- MATERIAL PHILOSOPHY -->
+<section id="material" style="padding:4rem;background:var(--concrete-dark);position:relative;overflow:hidden;">
   <div style="position:absolute;inset:0;background-image:url('images/material-maze.jpg');background-size:cover;background-position:center;opacity:0.05;pointer-events:none;"></div>
-  <div style="position:absolute;right:-3rem;bottom:-3rem;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(155,91,58,0.1) 0%,transparent 70%);pointer-events:none;"></div>
+  <div style="position:absolute;right:-4rem;top:50%;transform:translateY(-50%);font-size:20rem;color:rgba(155,91,58,0.03);font-family:var(--font-display);font-weight:700;pointer-events:none;line-height:1;user-select:none;">C</div>
 
   <div style="position:relative;z-index:1;">
     <div class="sec-eye" style="color:var(--rust-light);"><span style="width:20px;height:1px;background:var(--rust-light);display:inline-block;margin-right:0.7rem;"></span>材料哲學</div>
     <h2 class="sec-title" style="color:var(--warm-white);margin-bottom:2.5rem;">混凝土的層次，廢料的升華</h2>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;">
+    <!-- 主內容：左右並排，用 flex 確保穩定 -->
+    <div style="display:flex;gap:3rem;align-items:flex-start;">
 
-      <!-- 左：層次公式 -->
-      <div>
-        <div style="font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--rust-light);margin-bottom:1.25rem;opacity:0.85;">配方層次</div>
-        <div style="display:flex;flex-direction:column;gap:0.6rem;">
-          <div style="display:flex;align-items:center;gap:1rem;padding:0.9rem 1.25rem;background:rgba(212,207,200,0.04);border-left:3px solid rgba(155,91,58,0.3);">
-            <span style="font-size:1.4rem;flex-shrink:0;">💧</span>
-            <span style="font-family:var(--font-display);font-size:0.95rem;color:rgba(212,207,200,0.65);">水泥 + 水</span>
-            <span style="color:var(--rust-light);flex-shrink:0;">→</span>
+      <!-- 左欄：配方 + EAC + 數據 -->
+      <div style="flex:0 0 48%;min-width:0;">
+
+        <!-- 配方層次 -->
+        <div style="font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--rust-light);margin-bottom:1rem;opacity:0.85;">配方層次</div>
+        <div style="display:flex;flex-direction:column;gap:4px;margin-bottom:1.5rem;">
+          <div style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1.1rem;background:rgba(212,207,200,0.04);border-left:3px solid rgba(155,91,58,0.3);">
+            <span style="font-size:1.2rem;">💧</span>
+            <span style="font-size:0.88rem;color:rgba(212,207,200,0.6);">水泥 + 水</span>
+            <span style="color:var(--rust-light);font-size:1rem;margin:0 0.25rem;">→</span>
             <span style="font-family:var(--font-display);font-size:0.95rem;color:var(--warm-white);font-weight:600;">泥水 Paste</span>
+            <span style="font-size:0.72rem;color:var(--concrete-light);opacity:0.45;margin-left:auto;">表層灰色的來源</span>
           </div>
-          <div style="display:flex;align-items:center;gap:1rem;padding:0.9rem 1.25rem;background:rgba(212,207,200,0.04);border-left:3px solid rgba(155,91,58,0.4);">
-            <span style="font-size:1.4rem;flex-shrink:0;">🪨</span>
-            <span style="font-family:var(--font-display);font-size:0.95rem;color:rgba(212,207,200,0.65);">+ 砂</span>
-            <span style="color:var(--rust-light);flex-shrink:0;">→</span>
+          <div style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1.1rem;background:rgba(212,207,200,0.04);border-left:3px solid rgba(155,91,58,0.4);">
+            <span style="font-size:1.2rem;">🪨</span>
+            <span style="font-size:0.88rem;color:rgba(212,207,200,0.6);">+ 砂</span>
+            <span style="color:var(--rust-light);font-size:1rem;margin:0 0.25rem;">→</span>
             <span style="font-family:var(--font-display);font-size:0.95rem;color:var(--warm-white);font-weight:600;">砂漿 Mortar</span>
+            <span style="font-size:0.72rem;color:var(--concrete-light);opacity:0.45;margin-left:auto;">傳統工法抹面</span>
           </div>
-          <div style="display:flex;align-items:center;gap:1rem;padding:0.9rem 1.25rem;background:rgba(155,91,58,0.08);border-left:3px solid var(--rust);">
-            <span style="font-size:1.4rem;flex-shrink:0;">🔩</span>
-            <span style="font-family:var(--font-display);font-size:0.95rem;color:rgba(212,207,200,0.65);">+ 骨料</span>
-            <span style="color:var(--rust-light);flex-shrink:0;">→</span>
+          <div style="display:flex;align-items:center;gap:0.75rem;padding:0.85rem 1.1rem;background:rgba(155,91,58,0.08);border-left:3px solid var(--rust);">
+            <span style="font-size:1.2rem;">🔩</span>
+            <span style="font-size:0.88rem;color:rgba(212,207,200,0.6);">+ 骨料（力料）</span>
+            <span style="color:var(--rust-light);font-size:1rem;margin:0 0.25rem;">→</span>
             <span style="font-family:var(--font-display);font-size:1rem;color:var(--rust-light);font-weight:700;">混凝土 Concrete</span>
+            <span style="font-size:0.72rem;color:var(--concrete-light);opacity:0.45;margin-left:auto;">+ 鋼筋 = Structural</span>
           </div>
         </div>
 
-        <!-- EAC 核心工法 -->
-        <div style="margin-top:1.25rem;padding:1.25rem 1.5rem;border:1px solid rgba(155,91,58,0.35);background:rgba(155,91,58,0.06);display:flex;align-items:center;gap:1rem;">
-          <span style="font-size:2rem;flex-shrink:0;">⚡</span>
+        <!-- EAC -->
+        <div style="padding:1.1rem 1.4rem;border:1px solid rgba(155,91,58,0.35);background:rgba(155,91,58,0.07);display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;">
+          <span style="font-size:1.8rem;flex-shrink:0;">⚡</span>
           <div>
-            <div style="font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--rust-light);margin-bottom:0.25rem;">核心工法</div>
-            <div style="font-family:var(--font-display);font-size:1rem;color:var(--warm-white);font-weight:700;">EAC — Exposed Aggregate Concrete</div>
-            <div style="font-size:0.78rem;color:var(--concrete-light);opacity:0.75;margin-top:0.2rem;">水磨裸露骨料，讓廢料的地質記憶重現</div>
+            <div style="font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--rust-light);margin-bottom:0.2rem;">核心工法</div>
+            <div style="font-family:var(--font-display);font-size:0.95rem;color:var(--warm-white);font-weight:700;">EAC — Exposed Aggregate Concrete</div>
+            <div style="font-size:0.75rem;color:var(--concrete-light);opacity:0.72;margin-top:0.15rem;">骨料裸露工法，讓廢料的地質記憶重現為設計語言</div>
           </div>
         </div>
+
+        <!-- 關鍵數據 3 格 -->
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;">
+          <div style="padding:1.1rem;background:rgba(212,207,200,0.04);text-align:center;">
+            <div style="font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:var(--rust-light);line-height:1;">70%+</div>
+            <div style="font-size:0.62rem;color:var(--concrete-light);opacity:0.6;margin-top:0.3rem;letter-spacing:0.06em;">再生料佔比</div>
+          </div>
+          <div style="padding:1.1rem;background:rgba(212,207,200,0.04);text-align:center;">
+            <div style="font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:var(--rust-light);line-height:1;">-62%</div>
+            <div style="font-size:0.62rem;color:var(--concrete-light);opacity:0.6;margin-top:0.3rem;letter-spacing:0.06em;">碳排削減</div>
+          </div>
+          <div style="padding:1.1rem;background:rgba(212,207,200,0.04);text-align:center;">
+            <div style="font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:var(--rust-light);line-height:1;">100%</div>
+            <div style="font-size:0.62rem;color:var(--concrete-light);opacity:0.6;margin-top:0.3rem;letter-spacing:0.06em;">材料溯源可查</div>
+          </div>
+        </div>
+
       </div>
 
-      <!-- 右：三種再生材料（緊湊卡片） -->
-      <div>
-        <div style="font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--rust-light);margin-bottom:1.25rem;opacity:0.85;">三種核心再生材料</div>
-        <div style="display:flex;flex-direction:column;gap:1px;background:rgba(212,207,200,0.06);">
+      <!-- 右欄：三種再生材料 -->
+      <div style="flex:1;min-width:0;">
+        <div style="font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--rust-light);margin-bottom:1rem;opacity:0.85;">♻️ 三種核心再生材料</div>
+        <div style="display:flex;flex-direction:column;gap:4px;">
 
-          <div style="padding:1.5rem 1.75rem;background:var(--concrete-dark);display:flex;gap:1.25rem;align-items:flex-start;">
-            <div style="font-size:2rem;flex-shrink:0;margin-top:0.1rem;">🏚️</div>
+          <div style="padding:1.4rem 1.6rem;background:rgba(212,207,200,0.04);border-top:2px solid rgba(155,91,58,0.35);display:flex;gap:1rem;align-items:flex-start;">
+            <div style="font-size:2.2rem;flex-shrink:0;line-height:1;margin-top:0.1rem;">🏚️</div>
             <div>
-              <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.4rem;">
-                <span style="font-family:var(--font-display);font-size:0.8rem;color:var(--rust-light);opacity:0.55;font-weight:700;">01</span>
-                <span style="font-size:0.95rem;font-weight:600;color:var(--warm-white);">再生骨料（力料）</span>
+              <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.4rem;">
+                <span style="font-family:var(--font-display);font-size:0.78rem;color:var(--rust-light);opacity:0.5;font-weight:700;">01</span>
+                <span style="font-size:1rem;font-weight:600;color:var(--warm-white);">再生骨料（力料）</span>
               </div>
-              <p style="font-size:0.82rem;color:var(--concrete-light);line-height:1.65;font-weight:300;opacity:0.82;">拆除廢料破碎篩分後作骨料，水磨後的顆粒感是 Concredia.Lab 獨特觸感的來源。每塊廢料都有自己的地質故事。</p>
+              <p style="font-size:0.83rem;color:var(--concrete-light);line-height:1.68;font-weight:300;opacity:0.82;">拆除廢料破碎篩分後作骨料。水磨後的顆粒感是 Concredia.Lab 獨特觸感的來源——每塊廢料都有自己的地質故事。</p>
             </div>
           </div>
 
-          <div style="padding:1.5rem 1.75rem;background:var(--concrete-dark);display:flex;gap:1.25rem;align-items:flex-start;">
-            <div style="font-size:2rem;flex-shrink:0;margin-top:0.1rem;">🧱</div>
+          <div style="padding:1.4rem 1.6rem;background:rgba(212,207,200,0.04);border-top:2px solid rgba(155,91,58,0.35);display:flex;gap:1rem;align-items:flex-start;">
+            <div style="font-size:2.2rem;flex-shrink:0;line-height:1;margin-top:0.1rem;">🧱</div>
             <div>
-              <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.4rem;">
-                <span style="font-family:var(--font-display);font-size:0.8rem;color:var(--rust-light);opacity:0.55;font-weight:700;">02</span>
-                <span style="font-size:0.95rem;font-weight:600;color:var(--warm-white);">廢磚粉料與石粉</span>
+              <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.4rem;">
+                <span style="font-family:var(--font-display);font-size:0.78rem;color:var(--rust-light);opacity:0.5;font-weight:700;">02</span>
+                <span style="font-size:1rem;font-weight:600;color:var(--warm-white);">廢磚粉料與石粉</span>
               </div>
-              <p style="font-size:0.82rem;color:var(--concrete-light);line-height:1.65;font-weight:300;opacity:0.82;">不同拆除現場的磚粉各有色澤與礦物組成，使每件作品表面紋路自然天成、不可複製。</p>
+              <p style="font-size:0.83rem;color:var(--concrete-light);line-height:1.68;font-weight:300;opacity:0.82;">不同拆除現場的磚粉各有色澤與礦物組成，使每件作品表面紋路自然天成、不可複製——這是量產無法複刻的稀缺性。</p>
             </div>
           </div>
 
-          <div style="padding:1.5rem 1.75rem;background:var(--concrete-dark);display:flex;gap:1.25rem;align-items:flex-start;">
-            <div style="font-size:2rem;flex-shrink:0;margin-top:0.1rem;">🏭</div>
+          <div style="padding:1.4rem 1.6rem;background:rgba(212,207,200,0.04);border-top:2px solid rgba(155,91,58,0.35);display:flex;gap:1rem;align-items:flex-start;">
+            <div style="font-size:2.2rem;flex-shrink:0;line-height:1;margin-top:0.1rem;">🏭</div>
             <div>
-              <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.4rem;">
-                <span style="font-family:var(--font-display);font-size:0.8rem;color:var(--rust-light);opacity:0.55;font-weight:700;">03</span>
-                <span style="font-size:0.95rem;font-weight:600;color:var(--warm-white);">爐石粉 · 低碳交接材</span>
+              <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.4rem;">
+                <span style="font-family:var(--font-display);font-size:0.78rem;color:var(--rust-light);opacity:0.5;font-weight:700;">03</span>
+                <span style="font-size:1rem;font-weight:600;color:var(--warm-white);">爐石粉 · 低碳交接材</span>
               </div>
-              <p style="font-size:0.82rem;color:var(--concrete-light);line-height:1.65;font-weight:300;opacity:0.82;">煉鋼廠高爐爐渣磨成粉，部分取代水泥，達成 <strong style="color:var(--rust-light);">-62%</strong> 碳排目標的關鍵材料。</p>
+              <p style="font-size:0.83rem;color:var(--concrete-light);line-height:1.68;font-weight:300;opacity:0.82;">煉鋼廠高爐爐渣磨成粉，部分取代水泥。是達成 <strong style="color:var(--rust-light);">-62% 碳排</strong> 目標的關鍵材料，也是廢料循環最優雅的詮釋。</p>
             </div>
+          </div>
+
+          <!-- 底部：材料溯源說明 -->
+          <div style="padding:1rem 1.4rem;background:rgba(46,204,113,0.06);border:1px solid rgba(46,204,113,0.2);display:flex;align-items:center;gap:0.85rem;margin-top:4px;">
+            <span style="font-size:1.4rem;">📄</span>
+            <p style="font-size:0.78rem;color:rgba(46,204,113,0.85);line-height:1.55;">每件作品附完整<strong style="font-weight:500;"> 材料溯源文件</strong>，可直接納入企業 ESG 報告，符合政府綠色採購認定標準。</p>
           </div>
 
         </div>
@@ -1961,15 +1989,22 @@ window.addEventListener('scroll',()=>{if(window.scrollY>80){navEl.classList.add(
 //dumm
 <!-- 背景音樂播放器 -->
 <div class="music-player" id="musicPlayer">
-  <button class="mp-btn" onclick="mpToggle()" id="mpBtn">
-    <svg id="mpPlay" viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg>
-    <svg id="mpPause" viewBox="0 0 24 24" style="display:none"><rect x="5" y="3" width="4" height="18"/><rect x="15" y="3" width="4" height="18"/></svg>
+  <!-- 播放/暫停 -->
+  <button class="mp-btn" onclick="mpToggle()" title="播放 / 暫停">
+    <svg id="mpPlay" viewBox="0 0 24 24" style="width:14px;height:14px;fill:white;display:block;margin-left:1px;"><polygon points="6,3 20,12 6,21"/></svg>
+    <svg id="mpPause" viewBox="0 0 24 24" style="width:14px;height:14px;fill:white;display:none;"><rect x="5" y="3" width="4" height="18"/><rect x="15" y="3" width="4" height="18"/></svg>
   </button>
-  <div class="mp-label"><strong>Concredia.Lab</strong>背景音樂</div>
-  <div class="mp-vol" onclick="mpVol(event)" title="點擊調整音量">
+  <!-- 文字資訊 -->
+  <div style="line-height:1.3;">
+    <div style="font-size:0.7rem;font-weight:600;color:var(--warm-white);letter-spacing:0.05em;">Concredia.Lab</div>
+    <div style="font-size:0.6rem;color:rgba(212,207,200,0.5);letter-spacing:0.08em;">環境 · 材料 · 生活</div>
+  </div>
+  <!-- 音量條 -->
+  <div class="mp-vol" onclick="mpVol(event)" title="點擊調整音量" style="width:60px;">
     <div class="mp-vol-bar" id="mpVolBar"></div>
   </div>
-  <button class="mp-x" onclick="mpClose()">×</button>
+  <!-- 關閉 -->
+  <button class="mp-x" onclick="mpClose()" title="關閉">×</button>
 </div>
 <audio id="mpAudio" loop preload="none">
   <source src="music/bgm.mp3" type="audio/mpeg">
