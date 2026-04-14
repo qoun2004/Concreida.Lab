@@ -610,7 +610,17 @@ footer{background:var(--charcoal);padding:4rem 4rem 0;}
     <p class="sec-sub" style="color:var(--concrete-light);opacity:0.85;max-width:560px;">每一件 Concredia.Lab 作品，都附材料溯源文件與減碳量計算報告，可直接納入企業 ESG 報告。</p>
   </div>
 
-  <!-- READY-MADE -->
+  <!-- TABS -->
+<div style="background:var(--warm-white);padding:0 4rem;border-bottom:1px solid var(--concrete-light);position:sticky;top:80px;z-index:50;box-shadow:0 2px 12px rgba(0,0,0,0.06);">
+  <div style="display:flex;">
+    <button id="tab-btn-std" onclick="switchTab('standard')" style="padding:1.1rem 2rem;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;cursor:pointer;border:none;background:none;color:var(--rust);border-bottom:3px solid var(--rust);margin-bottom:-1px;font-family:var(--font-body);transition:all 0.2s;">READY-MADE · 標準量產</button>
+    <button id="tab-btn-cust" onclick="switchTab('custom')" style="padding:1.1rem 2rem;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:500;cursor:pointer;border:none;background:none;color:var(--concrete);border-bottom:3px solid transparent;margin-bottom:-1px;font-family:var(--font-body);transition:all 0.2s;">CUSTOM-MADE · 客製故事系列</button>
+  </div>
+</div>
+
+<!-- READY-MADE 內容 -->
+<div id="panel-standard" style="display:block;">
+<!-- READY-MADE -->
   <section id="standard" style="padding:5rem 4rem;background:var(--warm-white);">
     <div class="sec-eye">Ready-made · 標準量產</div>
     <h2 class="sec-title">標準系列</h2>
@@ -642,7 +652,12 @@ footer{background:var(--charcoal);padding:4rem 4rem 0;}
     </div>
   </section>
 
-  <!-- CUSTOM-MADE -->
+  
+</div>
+
+<!-- CUSTOM-MADE 內容 -->
+<div id="panel-custom" style="display:none;">
+<!-- CUSTOM-MADE -->
   <section id="custom" style="padding:5rem 4rem;background:var(--cream);">
     <div class="sec-eye">Custom-made · 客製故事系列</div>
     <h2 class="sec-title">客製系列</h2>
@@ -663,11 +678,15 @@ footer{background:var(--charcoal);padding:4rem 4rem 0;}
     </div>
   </section>
 
+</div>
+
+
   <!-- CTA -->
   <section style="padding:5rem 4rem;background:var(--concrete-dark);text-align:center;">
     <h2 class="sec-title" style="color:var(--warm-white);margin-bottom:1rem;">找不到你想要的？</h2>
     <p class="sec-sub" style="color:var(--concrete-light);opacity:0.8;margin:0 auto 2.5rem;">每一件 Concredia.Lab 的作品都可以是獨一無二的。告訴我們你的故事，我們來把它鑄進石頭裡。</p>
     <a href="contact.html" class="btn-p">洽詢客製化 →</a>
+      <a href="esg-dashboard.html" style="display:inline-block;margin-left:1rem;padding:0.9rem 1.75rem;border:1px solid rgba(46,204,113,0.4);color:#2ECC71;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.background='rgba(46,204,113,0.08)'" onmouseout="this.style.background='transparent'">ESG 數據儀表板 →</a>
   </section>
 </div>
 
@@ -729,6 +748,31 @@ checkMobile();window.addEventListener('resize',checkMobile);
 function openLightbox(src,cap){const lb=document.getElementById('lightbox');document.getElementById('lightbox-img').src=src;document.getElementById('lightbox-cap').textContent=cap;lb.style.display='flex';document.body.style.overflow='hidden';}
 function closeLightbox(){document.getElementById('lightbox').style.display='none';document.body.style.overflow='';}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
+function switchTab(tab){
+  var std = document.getElementById('panel-standard');
+  var cust = document.getElementById('panel-custom');
+  var btnStd = document.getElementById('tab-btn-std');
+  var btnCust = document.getElementById('tab-btn-cust');
+  if(tab === 'standard'){
+    std.style.display = 'block';
+    cust.style.display = 'none';
+    btnStd.style.color = 'var(--rust)';
+    btnStd.style.borderBottomColor = 'var(--rust)';
+    btnStd.style.fontWeight = '600';
+    btnCust.style.color = 'var(--concrete)';
+    btnCust.style.borderBottomColor = 'transparent';
+    btnCust.style.fontWeight = '500';
+  } else {
+    std.style.display = 'none';
+    cust.style.display = 'block';
+    btnCust.style.color = 'var(--rust)';
+    btnCust.style.borderBottomColor = 'var(--rust)';
+    btnCust.style.fontWeight = '600';
+    btnStd.style.color = 'var(--concrete)';
+    btnStd.style.borderBottomColor = 'transparent';
+    btnStd.style.fontWeight = '500';
+  }
+}
 </script>
 <script>
 function switchTab(tab,btn){

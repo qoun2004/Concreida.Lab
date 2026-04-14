@@ -1306,72 +1306,94 @@ footer{background:var(--charcoal);padding:4rem 4rem 0;}
   </div>
 </section>
 
-<!-- MATERIAL PHILOSOPHY（全展開 + 底圖） -->
-<section id="material" style="padding:5rem 4rem;background:var(--concrete-dark);position:relative;overflow:hidden;">
+<!-- MATERIAL PHILOSOPHY（緊湊版） -->
+<section id="material" style="padding:4rem 4rem;background:var(--concrete-dark);position:relative;overflow:hidden;">
   <!-- 底圖裝飾 -->
-  <div style="position:absolute;inset:0;background-image:url('images/material-maze.jpg');background-size:cover;background-position:center;opacity:0.06;pointer-events:none;"></div>
-  <div style="position:absolute;left:-8rem;bottom:-8rem;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(155,91,58,0.08) 0%,transparent 70%);pointer-events:none;"></div>
+  <div style="position:absolute;inset:0;background-image:url('images/material-maze.jpg');background-size:cover;background-position:center;opacity:0.05;pointer-events:none;"></div>
+  <div style="position:absolute;right:-3rem;bottom:-3rem;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(155,91,58,0.1) 0%,transparent 70%);pointer-events:none;"></div>
 
   <div style="position:relative;z-index:1;">
     <div class="sec-eye" style="color:var(--rust-light);"><span style="width:20px;height:1px;background:var(--rust-light);display:inline-block;margin-right:0.7rem;"></span>材料哲學</div>
-    <h2 class="sec-title" style="color:var(--warm-white);">混凝土的層次，<br>廢料的升華</h2>
+    <h2 class="sec-title" style="color:var(--warm-white);margin-bottom:2.5rem;">混凝土的層次，廢料的升華</h2>
 
-    <!-- 層次公式 -->
-    <div style="margin:3rem 0;display:flex;flex-direction:column;gap:1rem;max-width:700px;">
-      <div style="display:flex;align-items:center;gap:1.5rem;padding:1.25rem 1.5rem;background:rgba(212,207,200,0.05);border-left:4px solid rgba(155,91,58,0.4);">
-        <span style="font-size:1.5rem;">💧</span>
-        <span style="font-family:var(--font-display);font-size:1.1rem;color:var(--warm-white);">水泥 + 水</span>
-        <span style="color:var(--rust-light);font-size:1.2rem;">→</span>
-        <span style="font-family:var(--font-display);font-size:1.1rem;color:var(--rust-light);font-weight:600;">泥水 Paste</span>
-        <span style="font-size:0.78rem;color:var(--concrete-light);opacity:0.55;margin-left:auto;">表層灰色的來源</span>
-      </div>
-      <div style="display:flex;align-items:center;gap:1.5rem;padding:1.25rem 1.5rem;background:rgba(212,207,200,0.05);border-left:4px solid rgba(155,91,58,0.5);">
-        <span style="font-size:1.5rem;">🪨</span>
-        <span style="font-family:var(--font-display);font-size:1.1rem;color:var(--warm-white);">+ 砂</span>
-        <span style="color:var(--rust-light);font-size:1.2rem;">→</span>
-        <span style="font-family:var(--font-display);font-size:1.1rem;color:var(--rust-light);font-weight:600;">砂漿 Mortar</span>
-        <span style="font-size:0.78rem;color:var(--concrete-light);opacity:0.55;margin-left:auto;">傳統工法抹面</span>
-      </div>
-      <div style="display:flex;align-items:center;gap:1.5rem;padding:1.25rem 1.5rem;background:rgba(212,207,200,0.07);border-left:4px solid var(--rust);">
-        <span style="font-size:1.5rem;">🔩</span>
-        <span style="font-family:var(--font-display);font-size:1.1rem;color:var(--warm-white);">+ 骨料（力料）</span>
-        <span style="color:var(--rust-light);font-size:1.2rem;">→</span>
-        <span style="font-family:var(--font-display);font-size:1.2rem;color:var(--rust-light);font-weight:700;">混凝土 Concrete</span>
-        <span style="font-size:0.78rem;color:var(--concrete-light);opacity:0.55;margin-left:auto;">+ 鋼筋 = Structural</span>
-      </div>
-    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;">
 
-    <!-- EAC 核心工法 -->
-    <div style="padding:1.75rem 2rem;border:1px solid rgba(155,91,58,0.4);background:rgba(155,91,58,0.08);margin-bottom:3rem;display:flex;align-items:center;gap:1.5rem;max-width:700px;">
-      <div style="font-size:2.5rem;flex-shrink:0;">⚡</div>
+      <!-- 左：層次公式 -->
       <div>
-        <div style="font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--rust-light);margin-bottom:0.3rem;">核心工法</div>
-        <div style="font-family:var(--font-display);font-size:1.15rem;color:var(--warm-white);font-weight:600;">EAC — Exposed Aggregate Concrete</div>
-        <div style="font-size:0.85rem;color:var(--concrete-light);opacity:0.8;margin-top:0.3rem;">骨料裸露工法，讓廢料的地質記憶重新顯現為設計語言</div>
-      </div>
-    </div>
+        <div style="font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--rust-light);margin-bottom:1.25rem;opacity:0.85;">配方層次</div>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+          <div style="display:flex;align-items:center;gap:1rem;padding:0.9rem 1.25rem;background:rgba(212,207,200,0.04);border-left:3px solid rgba(155,91,58,0.3);">
+            <span style="font-size:1.4rem;flex-shrink:0;">💧</span>
+            <span style="font-family:var(--font-display);font-size:0.95rem;color:rgba(212,207,200,0.65);">水泥 + 水</span>
+            <span style="color:var(--rust-light);flex-shrink:0;">→</span>
+            <span style="font-family:var(--font-display);font-size:0.95rem;color:var(--warm-white);font-weight:600;">泥水 Paste</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:1rem;padding:0.9rem 1.25rem;background:rgba(212,207,200,0.04);border-left:3px solid rgba(155,91,58,0.4);">
+            <span style="font-size:1.4rem;flex-shrink:0;">🪨</span>
+            <span style="font-family:var(--font-display);font-size:0.95rem;color:rgba(212,207,200,0.65);">+ 砂</span>
+            <span style="color:var(--rust-light);flex-shrink:0;">→</span>
+            <span style="font-family:var(--font-display);font-size:0.95rem;color:var(--warm-white);font-weight:600;">砂漿 Mortar</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:1rem;padding:0.9rem 1.25rem;background:rgba(155,91,58,0.08);border-left:3px solid var(--rust);">
+            <span style="font-size:1.4rem;flex-shrink:0;">🔩</span>
+            <span style="font-family:var(--font-display);font-size:0.95rem;color:rgba(212,207,200,0.65);">+ 骨料</span>
+            <span style="color:var(--rust-light);flex-shrink:0;">→</span>
+            <span style="font-family:var(--font-display);font-size:1rem;color:var(--rust-light);font-weight:700;">混凝土 Concrete</span>
+          </div>
+        </div>
 
-    <!-- 三種再生材料 -->
-    <h3 style="font-family:var(--font-display);font-size:1.5rem;color:var(--warm-white);font-weight:700;margin-bottom:2rem;">♻️ 三種核心再生材料</h3>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:rgba(212,207,200,0.06);">
-      <div style="padding:2.5rem 2rem;background:var(--concrete-dark);border-top:3px solid var(--rust-light);">
-        <div style="font-size:2.5rem;margin-bottom:0.75rem;">🏚️</div>
-        <div style="font-family:var(--font-display);font-size:1.5rem;color:var(--rust-light);opacity:0.6;margin-bottom:0.5rem;">01</div>
-        <div style="font-size:1rem;font-weight:600;color:var(--warm-white);margin-bottom:0.6rem;">再生骨料（力料）</div>
-        <p style="font-size:0.85rem;color:var(--concrete-light);line-height:1.72;font-weight:300;opacity:0.85;">拆除廢料中的混凝土碎塊，破碎、篩分、品質分級後作為骨料。水磨後的顆粒感是 Concredia.Lab 獨特觸感的來源——每塊廢料都有自己的地質故事。</p>
+        <!-- EAC 核心工法 -->
+        <div style="margin-top:1.25rem;padding:1.25rem 1.5rem;border:1px solid rgba(155,91,58,0.35);background:rgba(155,91,58,0.06);display:flex;align-items:center;gap:1rem;">
+          <span style="font-size:2rem;flex-shrink:0;">⚡</span>
+          <div>
+            <div style="font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--rust-light);margin-bottom:0.25rem;">核心工法</div>
+            <div style="font-family:var(--font-display);font-size:1rem;color:var(--warm-white);font-weight:700;">EAC — Exposed Aggregate Concrete</div>
+            <div style="font-size:0.78rem;color:var(--concrete-light);opacity:0.75;margin-top:0.2rem;">水磨裸露骨料，讓廢料的地質記憶重現</div>
+          </div>
+        </div>
       </div>
-      <div style="padding:2.5rem 2rem;background:var(--concrete-dark);border-top:3px solid var(--rust-light);">
-        <div style="font-size:2.5rem;margin-bottom:0.75rem;">🧱</div>
-        <div style="font-family:var(--font-display);font-size:1.5rem;color:var(--rust-light);opacity:0.6;margin-bottom:0.5rem;">02</div>
-        <div style="font-size:1rem;font-weight:600;color:var(--warm-white);margin-bottom:0.6rem;">廢磚粉料與石粉</div>
-        <p style="font-size:0.85rem;color:var(--concrete-light);line-height:1.72;font-weight:300;opacity:0.85;">磚瓦與石材廢料研磨成粉，作為表層介質。不同拆除現場的磚粉各有色澤與礦物組成，使每件作品表面紋路自然天成、不可複製。</p>
+
+      <!-- 右：三種再生材料（緊湊卡片） -->
+      <div>
+        <div style="font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--rust-light);margin-bottom:1.25rem;opacity:0.85;">三種核心再生材料</div>
+        <div style="display:flex;flex-direction:column;gap:1px;background:rgba(212,207,200,0.06);">
+
+          <div style="padding:1.5rem 1.75rem;background:var(--concrete-dark);display:flex;gap:1.25rem;align-items:flex-start;">
+            <div style="font-size:2rem;flex-shrink:0;margin-top:0.1rem;">🏚️</div>
+            <div>
+              <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.4rem;">
+                <span style="font-family:var(--font-display);font-size:0.8rem;color:var(--rust-light);opacity:0.55;font-weight:700;">01</span>
+                <span style="font-size:0.95rem;font-weight:600;color:var(--warm-white);">再生骨料（力料）</span>
+              </div>
+              <p style="font-size:0.82rem;color:var(--concrete-light);line-height:1.65;font-weight:300;opacity:0.82;">拆除廢料破碎篩分後作骨料，水磨後的顆粒感是 Concredia.Lab 獨特觸感的來源。每塊廢料都有自己的地質故事。</p>
+            </div>
+          </div>
+
+          <div style="padding:1.5rem 1.75rem;background:var(--concrete-dark);display:flex;gap:1.25rem;align-items:flex-start;">
+            <div style="font-size:2rem;flex-shrink:0;margin-top:0.1rem;">🧱</div>
+            <div>
+              <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.4rem;">
+                <span style="font-family:var(--font-display);font-size:0.8rem;color:var(--rust-light);opacity:0.55;font-weight:700;">02</span>
+                <span style="font-size:0.95rem;font-weight:600;color:var(--warm-white);">廢磚粉料與石粉</span>
+              </div>
+              <p style="font-size:0.82rem;color:var(--concrete-light);line-height:1.65;font-weight:300;opacity:0.82;">不同拆除現場的磚粉各有色澤與礦物組成，使每件作品表面紋路自然天成、不可複製。</p>
+            </div>
+          </div>
+
+          <div style="padding:1.5rem 1.75rem;background:var(--concrete-dark);display:flex;gap:1.25rem;align-items:flex-start;">
+            <div style="font-size:2rem;flex-shrink:0;margin-top:0.1rem;">🏭</div>
+            <div>
+              <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.4rem;">
+                <span style="font-family:var(--font-display);font-size:0.8rem;color:var(--rust-light);opacity:0.55;font-weight:700;">03</span>
+                <span style="font-size:0.95rem;font-weight:600;color:var(--warm-white);">爐石粉 · 低碳交接材</span>
+              </div>
+              <p style="font-size:0.82rem;color:var(--concrete-light);line-height:1.65;font-weight:300;opacity:0.82;">煉鋼廠高爐爐渣磨成粉，部分取代水泥，達成 <strong style="color:var(--rust-light);">-62%</strong> 碳排目標的關鍵材料。</p>
+            </div>
+          </div>
+
+        </div>
       </div>
-      <div style="padding:2.5rem 2rem;background:var(--concrete-dark);border-top:3px solid var(--rust-light);">
-        <div style="font-size:2.5rem;margin-bottom:0.75rem;">🏭</div>
-        <div style="font-family:var(--font-display);font-size:1.5rem;color:var(--rust-light);opacity:0.6;margin-bottom:0.5rem;">03</div>
-        <div style="font-size:1rem;font-weight:600;color:var(--warm-white);margin-bottom:0.6rem;">爐石粉 · 低碳交接材</div>
-        <p style="font-size:0.85rem;color:var(--concrete-light);line-height:1.72;font-weight:300;opacity:0.85;">煉鋼廠高爐爐渣磨成粉，部分取代水泥。是降低碳足跡的關鍵策略，讓我們在使用廢料的同時，也在減少生產端的排放，達成 -62% 碳排目標。</p>
-      </div>
+
     </div>
   </div>
 </section>
